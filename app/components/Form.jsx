@@ -3,7 +3,7 @@
 import React from "react";
 
 export default function Form() {
-	if (!localStorage.getItem('count')) {
+	if (typeof window !== 'undefined' && !localStorage.getItem('count')) {
 		localStorage.setItem('count', 0);
 	}
 

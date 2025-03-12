@@ -5,8 +5,12 @@ import NutritionValues from "./components/NutritionValues";
 
 export default function Home() {
 
-	const nutrition = localStorage.getItem("nutrition");
-	const nutritionObject = JSON.parse(nutrition);
+	let nutritionObject = null;
+	
+	if (typeof window !== "undefined") {
+		const nutrition = localStorage.getItem("nutrition");
+		nutritionObject = JSON.parse(nutrition);
+	}
 
 	return (
 		<div className="">
