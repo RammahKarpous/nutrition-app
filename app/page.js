@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import Form from "./components/Form";
 import NutritionValues from "./components/NutritionValues";
 
@@ -8,8 +7,6 @@ export default function Home() {
 
 	const nutrition = localStorage.getItem("nutrition");
 	const nutritionObject = JSON.parse(nutrition);
-
-	const input = useRef(null);
 
 	return (
 		<div className="">
@@ -30,7 +27,7 @@ export default function Home() {
 
 				{nutritionObject &&
 					nutritionObject.map((item, index) => (
-						<NutritionValues key={index} item={item} index={index} input={input} />
+						<NutritionValues key={index} item={item} index={index} />
 					))}
 			</div>
 		</div>
